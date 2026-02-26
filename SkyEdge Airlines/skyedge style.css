@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+:root {
+    --primary-color: #00AEEF;
+    --primary-dark: #0089bc;
+    --primary-light: #66d0f9;
+    --primary-lighter: #e6f7fe;
+    --text-dark: #2c3e50;
+    --text-light: #6c757d;
+    --white: #ffffff;
+    --light-gray: #f8f9fa;
+    --border-color: #dee2e6;
+}
+
+body {
+    background-color: var(--light-gray);
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+nav {
+    background-color: #2c3e50;
+    padding: 1rem;
+    color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.logo-container {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 1rem;
+    background: var(--white);
+    box-shadow: 0 2px 4px rgba(0, 174, 239, 0.1);
+}
+
+.logo-container .logo-img {
+    max-width: 200px;
+    height: auto;
+}
+
+.search-panel, .checkout-container {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 174, 239, 0.1);
+}
+
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    flex: 1;
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+input, select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 174, 239, 0.1);
+}
+
+.btn, .search-btn, .select-flight-btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.1s;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover, .search-btn:hover, .select-flight-btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+/* Flight Selection Page Styles */
+.flight-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.flight-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 12px;
+    background-color: var(--white);
+    box-shadow: 0 4px 6px rgba(0, 174, 239, 0.1);
+    transition: transform 0.3s;
+}
+
+.flight-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 174, 239, 0.15);
+}
+
+.flight-info {
+    flex-grow: 1;
+    margin-right: 2rem;
+}
+
+.flight-time {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.from-city, .to-city {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.flight-price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 0 2rem;
+}
+
+.price-options {
+    margin-top: 1rem;
+    color: var(--text-light);
+}
+
+.price-options div {
+    margin: 0.3rem 0;
+}
+
+/* Icon Colors */
+.fa-cc-visa { color: var(--primary-color) !important; }
+.fa-cc-amex { color: var(--primary-color) !important; }
+.fa-cc-mastercard { color: var(--primary-color) !important; }
+.fa-cc-discover { color: var(--primary-color) !important; }
+.fa-bitcoin-sign { color: var(--primary-color) !important; }
+
+/* Checkout Specific Styles */
+.checkout-container hr {
+    border-color: var(--primary-lighter);
+    margin: 1rem 0;
+}
+
+.price {
+    color: var(--primary-color) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 800px) {
+    .row {
+        flex-direction: column-reverse;
+    }
+    .col-25, .col-50, .col-75 {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+    .flight-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .flight-info {
+        margin-right: 0;
+        margin-bottom: 1.5rem;
+    }
+    .flight-price {
+        margin: 1rem 0;
+    }
+} 
